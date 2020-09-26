@@ -2,10 +2,13 @@
 
 Redfish + Ansible + vSphere 7 new REST API provisioning
 
-Team members:
+**Team members:**
 
 Prajwal Parkash   
 [Ariel Sanchez](https://twitter.com/arielsanchezmor)  
+
+
+**Project Scope**  
 
 I'm thinking, we can do a very nice prrof of concept demo using both redfish and the new esxi rest api. Something like this:
 
