@@ -1,0 +1,6 @@
+[submodule "sddc-nested-lab"]
+	path = sddc-nested-lab
+	url = https://github.com/rutgerblom/SDDC.Lab
+[submodule "ansible-role-vra"]
+	path = ansible-role-vra
+	url = https://github.com/vmware-archive/ansible-role-vra
