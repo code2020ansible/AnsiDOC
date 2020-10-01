@@ -4,6 +4,8 @@ Redfish + Ansible + vSphere 7 new REST API provisioning
 
 ## Team members
 
+![the best teampicture ever!](https://github.com/code2020ansible/AnsiDOC/blob/master/vHackathon_Ansible_Team_Picture.jpg)
+
 - [Prajwal Prakash](https://twitter.com/prajwalprakash)
 - [Ariel Sanchez](https://twitter.com/arielsanchezmor)
 - [Dario Dörflinger](https://twitter.com/virtual_frog)
