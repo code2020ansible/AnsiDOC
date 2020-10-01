@@ -7,3 +7,6 @@
 [submodule "Ansible-Role-VRA"]
 	path = Ansible-Role-VRA
 	url = https://github.com/vmware-archive/ansible-role-vra
+[submodule "Ansible-SDDC-Lab"]
+	path = Ansible-SDDC-Lab
+	url = https://github.com/rutgerblom/SDDC.Lab
