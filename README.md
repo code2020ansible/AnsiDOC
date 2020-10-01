@@ -53,6 +53,6 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 ## Lessons Learned
 
-- [Introduction to Ansible with AWS and CloudFormation](https://linuxacademy.com/cp/courses/lesson/course/7748) (A Cloud Guru, 3 hours)
+- Take some time for some e-learning with courses like [Introduction to Ansible with AWS and CloudFormation](https://linuxacademy.com/cp/courses/lesson/course/7748) 
 - Enjoyed VMworld 2020's [Single Touch, Production-Ready ESXi Rollouts in Minutes With Ansible - HCP1705](https://my.vmworld.com/widget/vmware/vmworld2020/catalog/session/1587247214712001aHPB) by [Bryan Sullins](https://www.twitter.com/RussianLitGuy)
 - How to multitask and context-switch Ansible Learning, GitHub management, AWS lab building, VMWorld 2020 attending and Homekeeping at the same time!
