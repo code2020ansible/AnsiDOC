@@ -11,6 +11,7 @@ Redfish + Ansible + vSphere 7 new REST API provisioning
 - [Dario Dörflinger](https://twitter.com/virtual_frog)
 - [Nacho Osete](https://twitter.com/ignosgt)
 - [Wes Milliron](https://twitter.com/wesmilliron)
+- [David Prows](https://twitter.com/commputethis)
 
 ## Project Scope
 
