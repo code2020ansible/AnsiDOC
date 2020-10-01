@@ -1,0 +1,29 @@
+---
+# Writing Pod documentation
+- import_playbook: playbooks/writePodDoc.yml
+
+# Nested vSphere deployment starts here
+- import_playbook: playbooks/preparePhysical.yml
+- import_playbook: playbooks/deployRouter.yml
+- import_playbook: playbooks/deployVc.yml
+- import_playbook: playbooks/prepareISOInstaller.yml
+- import_playbook: playbooks/deployNestedEsxi.yml
+- import_playbook: playbooks/configureNestedEsxi.yml
+- import_playbook: playbooks/createVds.yml
+- import_playbook: playbooks/configureVsan.yml
+
+# NSX-T deployment starts here
+- import_playbook: playbooks/deployNsxManager.yml
+- import_playbook: playbooks/addNsxLicense.yml
+- import_playbook: playbooks/registerNsxComputeManager.yml
+- import_playbook: playbooks/createNsxTz.yml
+- import_playbook: playbooks/createNsxIpPool.yml
+- import_playbook: playbooks/createNsxUplinkProfiles.yml
+- import_playbook: playbooks/createNsxTnp.yml
+- import_playbook: playbooks/attachNsxTnp.yml
+- import_playbook: playbooks/createNsxEdgeTn.yml
+- import_playbook: playbooks/createNsxEdgeCluster.yml
+
+# NSX-T logical network provisioning starts here
+- import_playbook: playbooks/createNsxSegments.yml
+- import_playbook: playbooks/createNsxT0gateway.yml

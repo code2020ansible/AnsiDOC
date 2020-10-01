@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+    - name: Create variable with current date and time
+      set_fact: 
+        time: "{{lookup('pipe','date \"+%d-%B-%Y %H:%M\"')}}"
+
+    - name: Write Pod documentation
+      template: 
+        src: "../templates/pod_doc.html"
+        dest: "/home/$SUDO_USER/pod-{{ pod }}-doc.html"
+        mode: "0666"
+      ignore_errors: true

@@ -1,0 +1,52 @@
+---
+- hosts: localhost
+  gather_facts: false 
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+    - name: Check if NSX-T license file exists
+      stat: 
+        path: "{{ nsxlicense }}"
+      register: nsxlicensekey
+
+    - name: Create NSX-T Edge cluster
+      nsxt_edge_clusters:
+        hostname: "{{ nsxman.nsxman01.ip }}"
+        username: "{{ nsxmanadminuser }}"
+        password: "{{ nsxmanpassword }}"
+        validate_certs: False
+        display_name: "{{ edge_cluster_name }}"
+        cluster_profile_bindings:
+        - profile_name: "nsx-default-edge-high-availability-profile"
+          resource_type: EdgeHighAvailabilityProfile          
+        members:
+        - transport_node_name: "{{ edge_node1 }}"
+        - transport_node_name: "{{ edge_node2 }}"
+        state: present
+      register: edge_cluster
+      when: 
+        - nsxlicensekey.stat.exists == true
+        - deploy_nsxt == true
+        - deploy_nsxt_edge == true
+
+    - name:  Wait until the NSX-T API reports that the edge cluster is in realized state (wait max 30 minutes)
+      uri:
+        url: https://{{ item.value.ip }}/policy/api/v1/infra/sites/default/enforcement-points/default/edge-clusters/{{ edge_cluster.id }}
+        validate_certs: no
+        timeout: 5
+        force_basic_auth: yes
+        url_username: "{{ nsxmanadminuser }}"
+        url_password: "{{ nsxmanpassword }}"
+        method: GET
+        body_format: json
+        return_content: yes
+        status_code: 200
+      with_dict: "{{ nsxman }}"
+      register: result
+      until: result.status == 200
+      retries: 60
+      delay: 30
+      when: 
+        - nsxlicensekey.stat.exists == true
+        - deploy_nsxt == true
+        - deploy_nsxt_edge == true

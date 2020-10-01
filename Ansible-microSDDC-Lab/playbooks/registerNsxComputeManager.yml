@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+    - name: Register NSX-T Compute Manager
+      nsxt_fabric_compute_managers:
+          hostname: "{{ nsxman.nsxman01.ip }}"
+          username: "{{ nsxmanadminuser }}"
+          password: "{{ nsxmanpassword }}"
+          validate_certs: False
+          display_name: "{{ vcenter.fqdn }}"
+          server: "{{ vcenter.fqdn }}"
+          origin_type: vCenter
+          credential:
+            credential_type: UsernamePasswordLoginCredential
+            username: "{{ vcenter.user }}"
+            password: "{{ vcenter.password }}"
+          state: present
+      when: deploy_nsxt == true

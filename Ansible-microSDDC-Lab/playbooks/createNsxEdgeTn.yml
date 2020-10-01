@@ -1,0 +1,96 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+    - name: Check if the NSX-T license file exists
+      stat: 
+        path: "{{ nsxlicense }}"
+      register: nsxlicensekey
+
+    - name: Load variables for NSX-T
+      include_vars:
+        file: nsxt_vars.yml
+      when: 
+        - nsxlicensekey.stat.exists == True      
+        - deploy_nsxt == true
+        - deploy_nsxt_edge == true
+
+    - name: Deploy and configure NSX-T 2.5 Edge transport nodes
+      nsxt_transport_nodes:
+        hostname: "{{ nsxman.nsxman01.ip }}"
+        username: "{{ nsxmanadminuser }}"
+        password: "{{ nsxmanpassword }}"
+        validate_certs: False
+        display_name: "{{ item.display_name }}"
+        description: "Edge transport node"
+        host_switch_spec:
+          resource_type: StandardHostSwitchSpec
+          host_switches: "{{ item.host_switches }}"
+        node_deployment_info: "{{ item.node_deployment_info }}"
+        state: present
+        transport_zone_endpoints:
+        - transport_zone_name: "{{ tz_overlay_name }}"
+        - transport_zone_name: "{{ tz_edge_name }}"  
+      with_items:
+        - "{{ edge_transport_nodes2 }}"
+      async: 7200
+      poll: 0
+      when: 
+        - nsxlicensekey.stat.exists == true
+        - deploy_nsxt == true
+        - deploy_nsxt_edge == true
+        - nsxt_major_version == 2
+
+    - name: Deploy and configure NSX-T 3.0 Edge transport nodes
+      nsxt_transport_nodes:
+        hostname: "{{ nsxman.nsxman01.ip }}"
+        username: "{{ nsxmanadminuser }}"
+        password: "{{ nsxmanpassword }}"
+        validate_certs: False
+        display_name: "{{ item.display_name }}"
+        description: "Edge transport node"
+        host_switch_spec:
+          resource_type: StandardHostSwitchSpec
+          host_switches: "{{ item.host_switches }}"
+        node_deployment_info: "{{ item.node_deployment_info }}"
+        state: present 
+      with_items:
+        - "{{ edge_transport_nodes3 }}"
+      async: 7200
+      poll: 0
+      when: 
+        - nsxlicensekey.stat.exists == true
+        - deploy_nsxt == true
+        - deploy_nsxt_edge == true
+        - nsxt_major_version == 3
+
+    - name: Wait 1 minute for the NSX-T API to process Edge transport node deployment information
+      pause: minutes=1
+      when: 
+        - nsxlicensekey.stat.exists == true
+        - deploy_nsxt == true
+        - deploy_nsxt_edge == true
+
+    - name: Wait until the NSX-T API reports that no Edge transport nodes are in "PENDING" state (wait max 90 minutes)
+      uri:
+        url: https://{{ item.value.ip }}/api/v1/transport-nodes/state?status=PENDING
+        validate_certs: no
+        timeout: 5
+        force_basic_auth: yes
+        url_username: "{{ nsxmanadminuser }}"
+        url_password: "{{ nsxmanpassword }}"
+        method: GET
+        body_format: json
+        return_content: yes
+        status_code: 200
+      with_dict: "{{ nsxman }}"
+      register: result
+      until: result.json.result_count == 0
+      retries: 180
+      delay: 30
+      when: 
+        - nsxlicensekey.stat.exists == true
+        - deploy_nsxt == true
+        - deploy_nsxt_edge == true
