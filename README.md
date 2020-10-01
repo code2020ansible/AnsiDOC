@@ -52,7 +52,8 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 * Prepare a GitHub repository with the necessary submodules
 
 ## Lessons Learned
-
+- Designed a first simulated, and afterwards [emulated RedFish-supported Server environment](https://github.com/code2020ansible/AnsiDOC/tree/master/Redfish-Lookup) with Docker for Phase 1, a requirement for the next Phase of the project (get details and setup new ESXi servers)
+- Repurposed an [Ansible VMware SDDC Nested Lab toolkit](https://github.com/code2020ansible/AnsiDOC/tree/master/Ansible-microSDDC-Lab) so we could add another existing VRA module for extended functionality.
 - Take some time for some e-learning with courses like [Introduction to Ansible with AWS and CloudFormation](https://linuxacademy.com/cp/courses/lesson/course/7748) 
 - Enjoyed VMworld 2020's [Single Touch, Production-Ready ESXi Rollouts in Minutes With Ansible - HCP1705](https://my.vmworld.com/widget/vmware/vmworld2020/catalog/session/1587247214712001aHPB) by [Bryan Sullins](https://www.twitter.com/RussianLitGuy)
 - How to multitask and context-switch Ansible Learning, GitHub management, AWS lab building, VMWorld 2020 attending and Homekeeping at the same time!
