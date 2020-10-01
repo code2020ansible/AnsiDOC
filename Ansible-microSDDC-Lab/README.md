@@ -1,5 +1,9 @@
 # SDDC.Lab
 
+## **Quick note**
+
+Thanks in advance to **[Rutgerblom](https://github.com/rutgerblom) for contributing this great project**. On the meantime we will have a modified version of the project there to add a VRA extension, but we would like to merge efforts if we get a working project during VMware's CodeConnect2020 Hackathon. The README file is provided as-is at the moment.
+
 ## Table of Contents
 
 * [Description](#Description)
