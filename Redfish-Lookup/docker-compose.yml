@@ -1,0 +1,22 @@
+version: '3'
+services:
+  server1:
+    image: rfsim
+    ports:
+      - 8001:5000
+    environment:
+      - SERIAL_NUMBER=1A87CA442K
+
+  server2:
+    image: rfsim
+    ports:
+      - 8002:5000
+    environment:
+      - SERIAL_NUMBER=1A87CA442L
+
+  server3:
+    image: rfsim
+    ports:
+      - 8003:5000
+    environment:
+      - SERIAL_NUMBER=1A87CA442M
