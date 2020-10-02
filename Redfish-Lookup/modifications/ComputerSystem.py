@@ -7,6 +7,7 @@ import copy
 import strgen
 import random
 import string
+import os
 
 _TEMPLATE = \
 {
@@ -21,7 +22,7 @@ _TEMPLATE = \
     "Manufacturer": "Manufacturer Name",
     "Model": "Model Name",
     "SKU": "",
-    "SerialNumber": "{serial_number}",
+    "SerialNumber": "",
     "PartNumber": "",
     "Description": "Description of server",
     "UUID": "00000000-0000-0000-0000-000000000000",
@@ -132,9 +133,9 @@ def get_ComputerSystem_instance(wildcards):
     c['Id'] = c['Id'].format(**wildcards)
 
     letters_and_digits = string.ascii_uppercase + string.digits
-    serial_number = ''.join((random.choice(letters_and_digits) for i in range(10)))
+    serial_number = ''.join((random.choice(letters_and_digits) for i in range(5)))
 
-    c['serial_number'] = c['serial_number'].format(serial_number)
+    c['SerialNumber'] = os.environ['SERIAL_NUMBER_BASE'] + serial_number
 
     c['Processors']['@odata.id'] = c['Processors']['@odata.id'].format(**wildcards)
     c['Memory']['@odata.id'] = c['Memory']['@odata.id'].format(**wildcards)
