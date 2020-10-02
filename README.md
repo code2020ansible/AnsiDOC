@@ -12,6 +12,7 @@ Redfish + Ansible + vSphere 7 new REST API provisioning + vRA integrations
 - [Nacho Osete](https://twitter.com/ignosgt)
 - [Wes Milliron](https://twitter.com/wesmilliron)
 - [David Prows](https://twitter.com/commputethis)
+- [Carl Capozza](https://twitter.com/Carlcapozza)
 
 ## For the Hackathon presentation
 
