@@ -17,31 +17,33 @@ Redfish + Ansible + vSphere 7 new REST API provisioning + vRA integrations
 
 ### How we came about the idea
 
-Originally, AnsiDOC was going to be an Ansible native translation of vDocumentation. The vDocumentation project gets excel reports from virtual environments. The new version, vDoc, has started leveraging RedFish, a new protocol for out of band management of servers adopted by all major industry players. Because of Ansible's popularity and RedFish functionality, a new documentation tool can be created that works with VMware hosts as well as any other type of server out there - it is no longer dependent on OS. This became phase 1 of the project.
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/ansible-vmware.png width=100%>
 
-We also set to use the new REST API endpoints for vSphere 7. We thought we could transition from collecting data to using the data for provisioning. This became phase 2 of the project.
+**Originally, AnsiDOC was going to be an Ansible native translation of vDocumentation**. The vDocumentation project gets excel reports from virtual environments. The new version, vDoc, has started leveraging RedFish, a new protocol for out of band management of servers adopted by all major industry players. **Because of Ansible's popularity and RedFish functionality, a new documentation tool can be created** that works with VMware hosts as well as any other type of server out there - it is no longer dependent on OS. This became phase 1 of the project.
 
-Finally, we merged with the other EMEA based Ansible team to combine lab resources and focus on what's really amazing of the VMware Hackathons: meeting new people who are geeking out over the same things you are interested, and making friends! The EMEA team had big sights and we collaborated to create a joint lab environment so they can work on furthering work by [Rutger Blom](https://github.com/rutgerblom/SDDC.Lab) and [VMware's own Ansible examples](https://github.com/vmware-archive/ansible-role-vra/).
+**We also set to use the new REST API endpoints for vSphere 7. We thought we could transition from collecting data to using the data for provisioning**. This became phase 2 of the project.
+
+Finally, **we merged with the other EMEA based Ansible team to combine lab resources and focus on what's really amazing of the VMware Hackathons: meeting new people who are geeking out over the same things you are interested, and making friends!** The EMEA team had big sights and we collaborated to create a joint lab environment so they can work on furthering work by [Rutger Blom](https://github.com/rutgerblom/SDDC.Lab) and [VMware's own Ansible examples](https://github.com/vmware-archive/ansible-role-vra/).
 
 ### What you have learned
 
-First, companionship and collaboration have no bounds. We were able to effectively work together using VMware Code's Slack, Github and the lab environment. We made new friendships and will continue using this lab and this team in the future.  
+First, **companionship and collaboration have no bounds**. We were able to effectively work together using VMware Code's Slack, Github and the lab environment. We made new friendships and will continue using this lab and this team in the future. For most of us **Ansible was a new tool to be explored**, so we tried our best to learn about how it works and what can be done. 
 
-Every team member can find a way to contribute, And every team member in this case learned something.
+Every team member can find a way to contribute, and every team member in this case learned something.
 
 ### What challenges you faced
 
-Standing up a collaborative lab is no small feat. This took too much time. And even then, we didn't have the right hardware, so we had to get creative in our solutions.
+Standing up a collaborative lab is no small feat. This took too much time. And even then, we didn't have the right hardware, so we had to get creative in our solutions. During the joint-effort **we had to merge some changes and track advanced work so it may be pushed to the upstream branch**, but after some hours of *commitment* we achieved to have all the work (up to the last byte!) of all the team members that worked in a follow-the-sun basis.
 
 ### Why your chosen language was the right choice for this project
 
-Ansible is OS and platform agnostic - perfect for our operational plane, which was at the hardware and infrastructure level. Additionally, it is comfortable using open source technologies such as an Ubuntu VM jumpbox, and tracking changes in yaml with git. It was also very easy for members to pick up, and we discovered lots of functionality without spending too much time googling
+**Ansible is Agentless, OS and platform agnostic - perfect for our operational plane**, which was at the hardware and infrastructure level. Additionally, it is comfortable using open source technologies such as an Ubuntu VM jumpbox, and tracking changes in yaml with git. It was also very easy for members to pick up, and we discovered lots of functionality without spending too much time googling
 
 And now, on to the project!
 
 ## Project Scope
 
-We can do a very nice proof of concept demo using both redfish and the new ESXi rest api.
+We can do a very nice proof of concept demo using both Redfish and the new vSphere 7 ESXi RESTful api.
 
 Apart from provisioning the initial ESXi+vCenter stack with Ansible, we also plan to set on top a SDDC NSX-T Nested Lab, and a VRA service over the top.
 Helping to fulfill our best chaos engineering dreams, we joined the only two Ansible teams together for greater throughput
@@ -50,9 +52,9 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 ### Phase 1
 
-- look up IP address of redfish enabled server from table
-- look up redfish credentials from table
-- retrieve and output serial number from redfish API to console and back to table as a new column
+- Look up IP address of redfish enabled server from table
+- Look up redfish credentials from table
+- Retrieve and output serial number from redfish API to console and back to table as a new column
 
 ### Phase 2
 
