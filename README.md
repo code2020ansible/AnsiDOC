@@ -23,11 +23,13 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 ## What we would like to do
 
 ### Phase 1
+
 - look up IP address of redfish enabled server from table
 - look up redfish credentials from table
 - retrieve and output serial number from redfish API to console and back to table as a new column
 
 ### Phase 2
+
 - Lookup serial number in table, if found, in table, carry on with phase 2
 - Set ESXi hostname (may need vSphere 7 for this, using new REST API)
 - Set management IP address, mask and gateway, dns details for ESXi (may need vSphere 7 for this, using new REST API)
@@ -35,27 +37,28 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 > this actually has never been done and both phases can be worked on separately
 
 ### Phase 3
+
 - Build a nested SDDC NSX-T lab on top based on other existing project.
 - Add a VRA service on top as a final step for a complete VCAP nested study lab.
 
 ## Recommended References
 
-- vSphere 7 Web Services API - https://code.vmware.com/apis/968
-- Redfish API - https://www.supermicro.com/manuals/other/RedfishRefGuide.pdf
-- Redfish API - https://hewlettpackard.github.io/iLOAmpPack-Redfish-API-Docs
+- vSphere 7 Web Services API - <https://code.vmware.com/apis/968>
+- Redfish API - <https://www.supermicro.com/manuals/other/RedfishRefGuide.pdf>
+- Redfish API - <https://hewlettpackard.github.io/iLOAmpPack-Redfish-API-Docs>
 
 ## What we have already learned so far
 
 ### ToDos and Getting Things Done
 
-* Get some online learning and hands-on experience
-* Prepare a GitHub repository with the necessary submodules
+- Get some online learning and hands-on experience
+- Prepare a GitHub repository with the necessary submodules
 
 ## Lessons Learned
 
 - We had the opportunity to design a simulated redfish-server-supported environment, and then use a more robust model based on a community [RedFish Interface Emulator](https://github.com/code2020ansible/AnsiDOC/tree/master/Redfish-Lookup) with Docker, a necessary requirement for the next stage of the project (get details and setup new RedFish-supported ESXi servers)
 
-- On the intermediate stage, we had a free hand to create some additional playbooks leveraging the newest [vSphere ESXi Server 7.0 Web Services API](https://code.vmware.com/apis/968) for better RESTfulness (and greater justice!), so we may configure and set up the RedFish-Interfaced servers previously detected. 
+- On the intermediate stage, we had a free hand to create some additional playbooks leveraging the newest [vSphere ESXi Server 7.0 Web Services API](https://code.vmware.com/apis/968) for better RESTfulness (and greater justice!), so we may configure and set up the RedFish-Interfaced servers previously detected.
 
 - After getting a better insight of how Ansible could deploy a [VMware SDDC Nested Lab](https://github.com/code2020ansible/AnsiDOC/tree/master/Ansible-microSDDC-Lab) we repurposed the initial deployment answer file, so it may fit in our actual physical lab on the previously configured RedFish-Ready ESXi servers. We will finally try to add an existing [community Ansible VRA module](https://github.com/vmware-archive/ansible-role-vra/) for extended functionality, over the previously configured ESXi servers in the intermediate stage.
 
