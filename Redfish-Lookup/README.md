@@ -6,7 +6,7 @@ On any host (just be sure `table.csv` has the right IP address), run:
 
 ```sh
 docker build -t rfsim .
-docker run -d --rm -p 5000:5000 rfsim
+docker-compose up
 ```
 
 ## Run the Playbook
