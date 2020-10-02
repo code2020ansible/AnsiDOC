@@ -117,6 +117,11 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 ![vSphere API Explorer - esx API](https://github.com/code2020ansible/AnsiDOC/blob/master/images/vSphereAPIExporer-esxAPI.png)
 
+- Finally, with some expert help traversing the data sets by Prajwal, we managed to join the host query, REST query and redfish table created before to accomplish the proof of concept!
+
+![Joint phase 2 efforts](https://github.com/code2020ansible/AnsiDOC/blob/master/images/phase2-for-showing.png)
+
+
 ### Try to build a reduced version of an existing SDDC Nested Lab Ansible deployment, and add VRA deployability to the set
 
 - After getting a better insight of how Ansible could deploy a [VMware SDDC Nested Lab](https://github.com/code2020ansible/AnsiDOC/tree/master/Ansible-microSDDC-Lab) we repurposed the initial deployment answer file, so it may fit in our actual physical lab on the previously configured RedFish-Ready ESXi servers. We will finally try to add an existing [community Ansible VRA module](https://github.com/vmware-archive/ansible-role-vra/) for extended functionality, over the previously configured ESXi servers in the intermediate stage.
