@@ -1,12 +1,10 @@
 ---
 - hosts: localhost
-
   tasks:
   - name: Including Secret Environment Items
     include_vars:
       file: secrets_esxi.yml
       name: secret
-
   - name: esxi login
     uri:
       url: "https://{{secret.vcenter}}/rest/com/vmware/cis/session"
@@ -17,7 +15,6 @@
       status_code: 200
       validate_certs: no
     register: login
-
   - name: Get hosts from vCenter
     uri:
       url: "https://{{secret.vcenter}}/rest/vcenter/host"
@@ -26,10 +23,45 @@
       headers:
         Cookie: "{{login.set_cookie}}"
     register: vchosts
-    
   - debug:
-      var: vchosts.json.value
-
+      var: vchosts
+  - name: Setup table.csv
+    shell: echo "name,uri,model,serial,user,password,status,serialnumber" > table.csv
+  - name: Extract vchosts to table.csv
+    vars:
+      host: "{{ item.host }}"
+    shell: echo "{{ host }},192.168.130.100:5000,model1,serial1,user1,password1,ready," >> table.csv
+    with_items: "{{ vchosts.json.value }}"
+  - name: Backup old table.csv
+    copy:
+      src: table.csv
+      dest: backups/{{ ansible_date_time.epoch }}.csv
+  - name: Get Redfish servers with a ready status
+    shell: awk -F ',' '$7 == "ready" {print $1, $2, $5, $6}' table.csv
+    register: ready_servers
+  - name: Get Serial Number of ready servers
+    vars:
+      server_name: "{{ item.split(' ')[0] }}"
+      ip: "{{ item.split(' ')[1] }}"
+      username: "{{ item.split(' ')[2] }}"
+      password: "{{ item.split(' ')[3] }}"
+    uri:
+      url: http://{{ ip }}/redfish/v1/Systems/{{ server_name }}
+      user: username
+      password: password
+      force_basic_auth: yes
+      return_content: yes
+      body_format: json
+    with_items: "{{ ready_servers.stdout_lines }}"
+    register: redfish_api_responses
+  - name: Generate CSV with data from response
+    vars:
+      server_name: "{{ item[1].split(' ')[0] }}"
+      serial_number: "{{ item[0].json.SerialNumber }}"
+    shell: |
+      awk -F ',' '$1 == "{{ server_name }}" {$8 = "{{ serial_number }}"}1' OFS=, table.csv > tmp
+      mv tmp table.csv
+    loop: "{{ redfish_api_responses.results | zip(ready_servers.stdout_lines) | list }}"
 #  - name: Get HCL compatibility data from host1
 #    uri:
 #      url: "https://{{secret.esxi1}}/api/esx/hcl/compatibility-data/status"
@@ -38,16 +70,13 @@
 #      headers:
 #        Cookie: "{{login.set_cookie}}"
 #    register: esxiHCL
-
   - name: Get HCL compatibility data from host1
     uri:
-      url: "https://{{secret.vcenter}}/api/esx/hosts/{{vchosts.json.value[2].host}}/software/installed-components"
+      url: "https://{{secret.vcenter}}/api/esx/hosts/host-10/software/installed-components"
       force_basic_auth: yes
       validate_certs: no
       headers:
         Cookie: "{{login.set_cookie}}"
     register: esxiHCL
-
-
   - debug:
       var: esxiHCL
