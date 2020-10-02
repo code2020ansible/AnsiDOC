@@ -53,7 +53,7 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 <img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/team-lab.png width=512px></>
 
-- Thanks to Ariel we disposed of a nice Intel NUC-based Lab environment, where we could Just-In-Time-mess-with our Git repository, play with Ansible, emulate a RedFish Server-interfaced environment and the latest vSphere ESXi 7 RESTful API. **We disposed of three ESXi servers, a DNS server, a vCenter appliance and a nice jumpbox, Wireguard(ed) for better worldly availabity**; coast to coast and overseas, AMER + EMEA regions together in a lab that never sleeps and never got user-emptied in the latest 24 hours ;-)
+- Thanks to Ariel we disposed of a nice Intel NUC-based Lab environment, where we could Just-In-Time-mess-with our Git repository, play with Ansible, emulate a RedFish Server-interfaced environment and the latest vSphere ESXi 7 RESTful API. **We disposed of three ESXi servers, a DNS server, a vCenter appliance and a nice jumpbox, Wireguard(ed) for better worldly availability**; coast to coast and overseas, AMER + EMEA regions together in a lab that never sleeps and never got user-emptied in the latest 24 hours ;-)
 
 ### Design, simulate, and emulate a RedFish-interfaced Server enviroment with Docker
 
