@@ -1,6 +1,0 @@
-name,ipaddress,model,serial,user,password,status,serialnumber
-redfishserver1,0.0.0.0:8001,model1,serial1,user1,password1,ready,1A87CA442K
-redfishserver2,0.0.0.0:8002,model2,serial2,user2,password2,ready,1A87CA442L
-redfishserver3,0.0.0.0:8003,model3,serial3,user3,password3,ready,1A87CA442M
-redfishserver4,0.0.0.0:8004,model4,serial4,user4,password4,unavailable,
-redfishserver4,0.0.0.0:8005,model5,serial5,user5,password5,notready,
