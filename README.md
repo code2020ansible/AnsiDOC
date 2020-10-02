@@ -64,4 +64,8 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 - Take some time for some e-learning with courses like [Introduction to Ansible with AWS and CloudFormation](https://linuxacademy.com/cp/courses/lesson/course/7748) among other online resources apart from the excellent VMworld 2020's [Single Touch, Production-Ready ESXi Rollouts in Minutes With Ansible session - HCP1705](https://my.vmworld.com/widget/vmware/vmworld2020/catalog/session/1587247214712001aHPB) by [Bryan Sullins](https://www.twitter.com/RussianLitGuy)
 
+![follow-the-sun meetings!](https://github.com/code2020ansible/AnsiDOC/blob/master/images/vHackathon_Ansible_Meeting.png)
+
 - Use extensively and discovered [Wireguard, a nice OpenSource VPN service](https://www.wireguard.com/quickstart/) so we could connect all the members to our follow-the-sun lab plaform, based in the AMER and EMEA regions. And additionally...how to multitask and context-switch Ansible Learning, GitHub management, AWS/VMWare lab building, VMWorld 2020 attending and Family/Homekeeping at the same time!
+
+
