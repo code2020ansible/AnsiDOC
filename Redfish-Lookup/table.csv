@@ -1,4 +1,4 @@
-name,ipaddress,model,serial,user,password,status,serialnumber
+name,uri,model,serial,user,password,status,serialnumber
 System-1,192.168.130.100:5000,model1,serial1,user1,password1,ready,2M220100SL
 System-2,192.168.130.100:5000,model2,serial2,user2,password2,ready,2M220100SL
 System-3,192.168.130.100:5000,model3,serial3,user3,password3,ready,2M220100SL
