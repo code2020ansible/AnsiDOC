@@ -27,13 +27,11 @@ Finally, we merged with the other EMEA based Ansible team to combine lab resourc
 
 First, companionship and collaboration have no bounds. We were able to effectively work together using VMware Code's Slack, Github and the lab environment. We made new friendships and will continue using this lab and this team in the future.  
 
-Every team member can find a way to contribute. And every team member in this case learned something.
+Every team member can find a way to contribute, And every team member in this case learned something.
 
 ### What challenges you faced
 
 Standing up a collaborative lab is no small feat. This took too much time. And even then, we didn't have the right hardware, so we had to get creative in our solutions.
-
-Every team member can find a way to contribute. And every team member in this case learned something.
 
 ### Why your chosen language was the right choice for this project
 
@@ -79,7 +77,7 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 ### To collaborate altogether in a thriving JIT/GitLab/AnsiLab/SDDCLab/NestedLab
 
-<img src=<https://github.com/code2020ansible/AnsiDOC/blob/master/images/team-lab.png width=512px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/team-lab.png width=512px></>
 
 - Thanks to Ariel we disposed of a nice Intel NUC-based Lab environment, where we could Just-In-Time-mess-with our Git repository, play with Ansible, emulate a RedFish Server-interfaced environment and the latest vSphere ESXi 7 RESTful API. **We disposed of three ESXi servers, a DNS server, a vCenter appliance and a nice jumpbox, Wireguard(ed) for better worldly availability**; coast to coast and overseas, AMER + EMEA regions together in a lab that never sleeps and never got user-emptied in the latest 24 hours ;-)
 
@@ -89,14 +87,14 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 - With this Docker environment (and several containers acting as physical servers), we were able to query serial numbers with Ansible against the RedShift interfaces and populate a CSV-based tablespace, the foundation for the next stage in our project: identify certain servers and gather ESXi information (Note: we are just on the stage to provision/configure the selected servers depending on the SERIAL/State criteria of our CSV document.
 
-<img src=<https://github.com/code2020ansible/AnsiDOC/blob/master/images/table-csv.png width=720px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/table-csv.png width=720px></>
 
 ### Use Ansible to query configuration data from the newest vSphere 7 RESTful API in our lab
 
 - On the intermediate stage, we had a free hand to create some additional playbooks leveraging the newest [vSphere ESXi Server 7.0 Web Services API](https://code.vmware.com/apis/968) for better RESTfulness (and greater justice!), so we may configure and set up the RedFish-Interfaced servers previously detected.
 
-<img src=<https://github.com/code2020ansible/AnsiDOC/blob/master/images/gathering-facts-playbook.png width=720px></>
-<img src=<https://github.com/code2020ansible/AnsiDOC/blob/master/images/ansible-playbook-api-test.png width=720px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/gathering-facts-playbook.png width=720px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/ansible-playbook-api-test.png width=720px></>
 
 - We also learned that in order to reference information returned from an API call like the host mob-id from vcenter host api call...
 
@@ -118,7 +116,7 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 - Take some time for some e-learning with courses like [Introduction to Ansible with AWS and CloudFormation](https://linuxacademy.com/cp/courses/lesson/course/7748) among other online resources apart from the excellent VMworld 2020's [Single Touch, Production-Ready ESXi Rollouts in Minutes With Ansible session - HCP1705](https://my.vmworld.com/widget/vmware/vmworld2020/catalog/session/1587247214712001aHPB) by [Bryan Sullins](https://www.twitter.com/RussianLitGuy)
 
-<img src=<https://github.com/code2020ansible/AnsiDOC/blob/master/images/vHackathon_Ansible_Meeting.png width=512px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/vHackathon_Ansible_Meeting.png width=512px></>
 
 - Use extensively and discovered [Wireguard, a nice OpenSource VPN service](https://www.wireguard.com/quickstart/) so we could connect all the members to our follow-the-sun lab plaform, based in the AMER and EMEA regions.
 
