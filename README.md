@@ -27,6 +27,8 @@ Finally, **we merged with the other EMEA based Ansible team to combine lab resou
 
 ### What you have learned
 
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/vHackathon_Ansible_Meeting.png width=512px></>
+
 First, **companionship and collaboration have no bounds**. We were able to effectively work together using VMware Code's Slack, Github and the lab environment. We made new friendships and will continue using this lab and this team in the future. For most of us **Ansible was a new tool to be explored**, so we tried our best to learn about how it works and what can be done. 
 
 Every team member can find a way to contribute, and every team member in this case learned something.
@@ -118,8 +120,4 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 - Take some time for some e-learning with courses like [Introduction to Ansible with AWS and CloudFormation](https://linuxacademy.com/cp/courses/lesson/course/7748) among other online resources apart from the excellent VMworld 2020's [Single Touch, Production-Ready ESXi Rollouts in Minutes With Ansible session - HCP1705](https://my.vmworld.com/widget/vmware/vmworld2020/catalog/session/1587247214712001aHPB) by [Bryan Sullins](https://www.twitter.com/RussianLitGuy)
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/vHackathon_Ansible_Meeting.png width=512px></>
-
-- Use extensively and discovered [Wireguard, a nice OpenSource VPN service](https://www.wireguard.com/quickstart/) so we could connect all the members to our follow-the-sun lab plaform, based in the AMER and EMEA regions.
-
-- And additionally...how to multitask and context-switch Ansible Learning, GitHub management, AWS/VMWare lab building, VMWorld 2020 attending and Family/Homekeeping at the same time!
+- Use extensively and discovered [Wireguard, a nice OpenSource VPN service](https://www.wireguard.com/quickstart/) so we could connect all the members to our follow-the-sun lab plaform, based in the AMER and EMEA regions. And additionally...how to multitask and context-switch Ansible Learning, GitHub management, AWS/VMWare lab building, VMWorld 2020 attending and Family/Homekeeping at the same time!
