@@ -1,6 +1,6 @@
 # AnsiDOC
 
-Redfish + Ansible + vSphere 7 new REST API provisioning
+Redfish + Ansible + vSphere 7 new REST API provisioning + vRA integrations
 
 ## Team members
 
@@ -12,6 +12,36 @@ Redfish + Ansible + vSphere 7 new REST API provisioning
 - [Nacho Osete](https://twitter.com/ignosgt)
 - [Wes Milliron](https://twitter.com/wesmilliron)
 - [David Prows](https://twitter.com/commputethis)
+
+## For the Hackathon presentation
+
+### How we came about the idea
+
+Originally, AnsiDOC was going to be an Ansible native translation of vDocumentation. The vDocumentation project gets excel reports from virtual environments. The new version, vDoc, has started leveraging RedFish, a new protocol for out of band management of servers adopted by all major industry players. Because of Ansible's popularity and RedFish functionality, a new documentation tool can be created that works with VMware hosts as well as any other type of server out there - it is no longer dependent on OS. This became phase 1 of the project.
+
+We also set to use the new REST API endpoints for vSphere 7. We thought we could transition from collecting data to using the data for provisioning. This became phase 2 of the project.
+
+Finally, we merged with the other EMEA based Ansible team to combine lab resources and focus on what's really amazing of the VMware Hackathons: meeting new people who are geeking out over the same things you are interested, and making friends! The EMEA team had big sights and we collaborated to create a joint lab environment so they can work on furthering work by [Rutger Blom](https://github.com/rutgerblom/SDDC.Lab) and [VMware's own Ansible examples](https://github.com/vmware-archive/ansible-role-vra/).
+
+### What you have learned
+
+First, companionship and collaboration have no bounds. We were able to effectively work together using VMware Code's Slack, Github and the lab environment. We made new friendships and will continue using this lab and this team in the future.  
+
+Every team member can find a way to contribute. And every team member in this case learned something.
+
+### What challenges you faced
+
+Standing up a collaborative lab is no small feat. This took too much time. And even then, we didn't have the right hardware, so we had to get creative in our solutions.
+
+Every team member can find a way to contribute. And every team member in this case learned something.
+
+### Why your chosen language was the right choice for this project
+
+Ansible is OS and platform agnostic - perfect for our operational plane, which was at the hardware and infrastructure level. Additionally, it is comfortable using open source technologies such as an Ubuntu VM jumpbox, and tracking changes in yaml with git. It was also very easy for members to pick up, and we discovered lots of functionality without spending too much time googling
+
+
+And now, on to the project!
+
 
 ## Project Scope
 
