@@ -1,0 +1,56 @@
+---
+- hosts: localhost
+
+  tasks:
+  - name: Including Secret Environment Items
+    include_vars:
+      file: secrets_esxi.yml
+      name: secret
+
+  - name: esxi login
+    uri:
+      url: "https://{{secret.vcenter}}/rest/com/vmware/cis/session"
+      force_basic_auth: yes
+      method: POST
+      user: "{{secret.username}}"
+      password: "{{secret.password}}"
+      status_code: 200
+      validate_certs: no
+    register: login
+
+  - name: Get hosts from vCenter
+    uri:
+      url: "https://{{secret.vcenter}}/rest/vcenter/host"
+      force_basic_auth: yes
+      validate_certs: no
+      headers:
+        Cookie: "{{login.set_cookie}}"
+    register: vchosts
+    
+  - debug:
+      var: vchosts
+
+  - name: Get HCL compatibility data from host-17
+    uri:
+      url: "https://{{secret.vcenter}}/api/esx/hcl/hosts/host-17/compatibility-releases"
+      force_basic_auth: yes
+      validate_certs: no
+      headers:
+        Cookie: "{{login.set_cookie}}"
+    register: TestESX
+
+  - debug:
+      var: TestESX
+
+  - name: Get HCL compatibility data from host10
+    uri:
+      url: "https://{{secret.vcenter}}/api/esx/hosts/host-10/software/installed-components"
+      force_basic_auth: yes
+      validate_certs: no
+      headers:
+        Cookie: "{{login.set_cookie}}"
+    register: esxiHCL
+
+
+  - debug:
+      var: esxiHCL
