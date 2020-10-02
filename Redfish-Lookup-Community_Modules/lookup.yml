@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  vars_files:
+    - ../../redfish_info_vars.yml
+  tasks:
+  # read csv module https://docs.ansible.com/ansible/2.9/modules/read_csv_module.html#read-csv-module
+  - name: Read in Table information
+    read_csv:
+      path: ../Redfish-Lookup/table.csv
+    register: table 
+
+  - debug:
+      msg: "{{table}}" 
+  
+  - name: Get Redfish Info from server
+    redfish_info:
+      category: all 
+      command: all 
+      baseuri: "{{uri}}"
+      username: "{{username}}"
+      password: "{{password}}"
+    register: results
+
+  - debug:
+      msg: "{{ results  }}"
