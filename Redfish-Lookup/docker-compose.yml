@@ -1,0 +1,22 @@
+version: "3"
+services:
+  server1:
+    image: rfsim
+    ports:
+      - 5000:5000
+    environment:
+      - SERIAL_NUMBER_BASE=A442K
+
+  server2:
+    image: rfsim
+    ports:
+      - 5001:5000
+    environment:
+      - SERIAL_NUMBER_BASE=B442L
+
+  server3:
+    image: rfsim
+    ports:
+      - 5002:5000
+    environment:
+      - SERIAL_NUMBER_BASE=C442M
