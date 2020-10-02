@@ -39,9 +39,7 @@ Every team member can find a way to contribute. And every team member in this ca
 
 Ansible is OS and platform agnostic - perfect for our operational plane, which was at the hardware and infrastructure level. Additionally, it is comfortable using open source technologies such as an Ubuntu VM jumpbox, and tracking changes in yaml with git. It was also very easy for members to pick up, and we discovered lots of functionality without spending too much time googling
 
-
 And now, on to the project!
-
 
 ## Project Scope
 
