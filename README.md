@@ -27,7 +27,7 @@ Finally, **we merged with the other EMEA based Ansible team to combine lab resou
 
 ### What you have learned
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/vHackathon_Ansible_Meeting.png width=720px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/vHackathon_Ansible_Meeting.png width=720px>
 
 First, **companionship and collaboration have no bounds**. We were able to effectively work together using VMware Code's Slack, Github and the lab environment. We made new friendships and will continue using this lab and this team in the future. For most of us **Ansible was a new tool to be explored**, so we tried our best to learn about how it works and what can be done. 
 
@@ -37,7 +37,7 @@ Every team member can find a way to contribute, and every team member in this ca
 
 Standing up a collaborative lab is no small feat. This took too much time. And even then, we didn't have the right hardware, so we had to get creative in our solutions. During the joint-effort **we had to merge some changes and track advanced work so it may be pushed to the upstream branch**, but after some hours of full commitment we achieved to have all the work -up to the last byte!- of all the team members that worked in a follow-the-sun basis.
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/git-commitment.png width=720px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/git-commitment.png width=720px>
 
 
 ### Why your chosen language was the right choice for this project
@@ -84,7 +84,7 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 ### To collaborate altogether in a thriving JIT/GitLab/AnsiLab/SDDCLab/NestedLab
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/team-lab.png width=512px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/team-lab.png width=512px>
 
 - Thanks to Ariel we disposed of a nice Intel NUC-based Lab environment, where we could Just-In-Time-mess-with our Git repository, play with Ansible, emulate a RedFish Server-interfaced environment and the latest vSphere ESXi 7 RESTful API. **We disposed of three ESXi servers, a DNS server, a vCenter appliance and a nice jumpbox, Wireguard(ed) for better worldly availability**; coast to coast and overseas, AMER + EMEA regions together in a lab that never sleeps and never got user-emptied in the latest 24 hours ;-)
 
@@ -94,21 +94,21 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 - With this Docker environment (and several containers acting as physical servers), we were able to query serial numbers with Ansible against the RedShift interfaces and populate a CSV-based tablespace, the foundation for the next stage in our project: identify certain servers and gather ESXi information (Note: we are just on the stage to provision/configure the selected servers depending on the SERIAL/State criteria of our CSV document.
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/table-csv.png width=720px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/table-csv.png width=720px>
 
 ### Use Ansible to query configuration data from the newest vSphere 7 RESTful API in our lab
 
 - On the intermediate stage, we had a free hand to create some additional playbooks leveraging the newest [vSphere ESXi Server 7.0 Web Services API](https://code.vmware.com/apis/968) for better RESTfulness (and greater justice!), so we may configure and set up the RedFish-Interfaced servers previously detected.
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/ansible-playbook-api-test.png width=720px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/ansible-playbook-api-test.png width=720px>
 
 - We also learned that in order to reference information returned from an API call like the host mob-id from vcenter host api call...
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/vchosts.png width=512px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/vchosts.png width=512px>
 
 ...one can do the following:  
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/gathering-facts-playbook.png width=720px></>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/gathering-facts-playbook.png width=720px>
 
 - On the other hand, we found out that the vSphere 7 esx REST API still required having vCenter to use.  It can not be used to connect directly to a host.  We used the API Explorer in Developer Center with in the vSphere Client to determine this.
 
