@@ -1,41 +1,41 @@
 - name: Populate Redfish serial numbers of servers
-  
+
   hosts: localhost
   tasks:
-  - name: Backup old table.csv
-    copy:
-      src: table.csv
-      dest: backups/{{ ansible_date_time.epoch }}.csv
+    - name: Backup old table.csv
+      copy:
+        src: table.csv
+        dest: backups/{{ ansible_date_time.epoch }}.csv
 
-  - name: Get Redfish servers with a ready status
-    shell: awk -F ',' '$7 == "ready" {print $1, $2, $5, 6}' table.csv
-    register: ready_servers
+    - name: Get Redfish servers with a ready status
+      shell: awk -F ',' '$7 == "ready" {print $1, $2, $5, $6}' table.csv
+      register: ready_servers
 
-  - name: Get Serial Number of ready servers
-    vars:
-      ip: "{{ item.split(' ')[1] }}"
-      username: "{{ item.split(' ')[2] }}"
-      password: "{{ item.split(' ')[3] }}"
-    
-    uri:
-      url: http://{{ ip }}/redfish/v1/Systems/1
-      user: username
-      password: password  
-      force_basic_auth: yes
-      return_content: yes
-      body_format: json
+    - name: Get Serial Number of ready servers
+      vars:
+        server_name: "{{ item.split(' ')[0] }}"
+        ip: "{{ item.split(' ')[1] }}"
+        username: "{{ item.split(' ')[2] }}"
+        password: "{{ item.split(' ')[3] }}"
 
-    with_items: "{{ ready_servers.stdout_lines }}"
-    register: redfish_api_responses
+      uri:
+        url: http://{{ ip }}/redfish/v1/Systems/{{ server_name }}
+        user: username
+        password: password
+        force_basic_auth: yes
+        return_content: yes
+        body_format: json
 
-  - name: Generate CSV with data from response
-    vars:
-      server_name: "{{ item[1].split(' ')[0] }}"
-      serial_number: "{{ item[0].json.SerialNumber }}"
+      with_items: "{{ ready_servers.stdout_lines }}"
+      register: redfish_api_responses
 
-    shell: |
-      awk -F ',' '$1 == "{{ server_name }}" {$8 = "{{ serial_number }}"}1' OFS=, table.csv > tmp
-      mv tmp table.csv
-    
-    loop: "{{ redfish_api_responses.results | zip(ready_servers.stdout_lines) | list }}"
-      
+    - name: Generate CSV with data from response
+      vars:
+        server_name: "{{ item[1].split(' ')[0] }}"
+        serial_number: "{{ item[0].json.SerialNumber }}"
+
+      shell: |
+        awk -F ',' '$1 == "{{ server_name }}" {$8 = "{{ serial_number }}"}1' OFS=, table.csv > tmp
+        mv tmp table.csv
+
+      loop: "{{ redfish_api_responses.results | zip(ready_servers.stdout_lines) | list }}"

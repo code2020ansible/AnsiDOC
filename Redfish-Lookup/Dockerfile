@@ -1,9 +1,9 @@
-FROM python:3-alpine
-RUN apk add --no-cache openssh openrc
+FROM python:3.5
+RUN apt update
+RUN apt install -y git
 WORKDIR /usr/src/app
-RUN pip install --no-cache-dir flask
-
-EXPOSE 5000
-
-COPY redfish_server_simulator.py app.py
-CMD [ "python", "./app.py" ]
+RUN git clone https://github.com/DMTF/Redfish-Interface-Emulator
+RUN sed -i 's/MarkupSafe==1.0/MarkupSafe==1.1.1/' ./Redfish-Interface-Emulator/packageSets/Env-Local-Python3.5.2_requirements.txt
+RUN pip install -r ./Redfish-Interface-Emulator/packageSets/Env-Local-Python3.5.2_requirements.txt
+WORKDIR /usr/src/app/Redfish-Interface-Emulator
+CMD [ "python", "./emulator.py"]
