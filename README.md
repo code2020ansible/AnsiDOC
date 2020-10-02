@@ -59,6 +59,8 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 - We had the opportunity to design a simulated redfish-server-supported environment, and then use a more robust model based on a community [RedFish Interface Emulator](https://github.com/code2020ansible/AnsiDOC/tree/master/Redfish-Lookup) with Docker, a necessary requirement for the next stage of the project (get details and setup new RedFish-supported ESXi servers)
 
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/table-csv.png width=720px></>
+
 ### Use Ansible to query configuration data from the newest vSphere 7 RESTful API in our lab
 
 - On the intermediate stage, we had a free hand to create some additional playbooks leveraging the newest [vSphere ESXi Server 7.0 Web Services API](https://code.vmware.com/apis/968) for better RESTfulness (and greater justice!), so we may configure and set up the RedFish-Interfaced servers previously detected.
