@@ -98,7 +98,6 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 - On the intermediate stage, we had a free hand to create some additional playbooks leveraging the newest [vSphere ESXi Server 7.0 Web Services API](https://code.vmware.com/apis/968) for better RESTfulness (and greater justice!), so we may configure and set up the RedFish-Interfaced servers previously detected.
 
 <img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/gathering-facts-playbook.png width=720px></>
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/ansible-playbook-api-test.png width=720px></>
 
 - We also learned that in order to reference information returned from an API call like the host mob-id from vcenter host api call...
 
@@ -106,7 +105,7 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 ...one can do the following:  
 
-![vchosts-yml](https://github.com/code2020ansible/AnsiDOC/blob/master/images/vchosts-yml.png)
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/ansible-playbook-api-test.png width=720px></>
 
 - On the other hand, we found out that the vSphere 7 esx REST API still required having vCenter to use.  It can not be used to connect directly to a host.  We used the API Explorer in Developer Center with in the vSphere Client to determine this.
 
