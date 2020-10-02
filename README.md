@@ -93,7 +93,7 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 - We had the opportunity to design a simulated redfish-server-supported environment, and then use a more robust model based on a community [RedFish Interface Emulator](https://github.com/code2020ansible/AnsiDOC/tree/master/Redfish-Lookup) with Docker, a necessary requirement for the next stage of the project (get details and setup new RedFish-supported ESXi servers).
 
-<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/docker-redshift-containers.png width=512px>
+<img src=https://github.com/code2020ansible/AnsiDOC/blob/master/images/docker-redshift-containers.png width=720px>
 
 - With this Docker environment (and several containers acting as physical servers), we were able to query serial numbers with Ansible against the RedShift interfaces and populate a CSV-based tablespace, the foundation for the next stage in our project: identify certain servers and gather ESXi information (Note: we are just on the stage to provision/configure the selected servers depending on the SERIAL/State criteria of our CSV document.
 
