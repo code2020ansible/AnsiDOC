@@ -49,10 +49,11 @@ Helping to fulfill our best chaos engineering dreams, we joined the only two Ans
 
 ## What we have already learned so far
 
-### ToDos and Getting Things Done
+### To collaborate altogether in a thriving JIT/GitLab/AnsiLab/SDDCLab/NestedLab
 
-- Get some online learning and hands-on experience
-- Prepare a GitHub repository with the necessary submodules
+[Our lab environment!](https://github.com/code2020ansible/AnsiDOC/blob/master/images/team-lab.png)
+
+- Thanks to Ariel we disposed of a nice Intel NUC-based Lab environment, where we could Just-In-Time-mess-with our Git repository, play with Ansible, emulate a RedFish Server-interfaced environment and the latest vSphere ESXi 7 RESTful API. We disposed of two ESXi servers, a DNS server, a vCenter appliance and a nice jumpbox, Wireguard(ed) for better worldly availabity; coast to coast and overseas, AMER + EMEA regions together in a lab that never sleeps and never got user-emptied in the latest 24 hours ;-)
 
 ## Lessons Learned
 
