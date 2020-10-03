@@ -1,7 +1,8 @@
 # AnsiDOC
 Redfish + Ansible + vSphere 7 new REST API provisioning + vRA integrations
 
-### Winning entry to the VMware {code} Connect Hackathon 2020!
+## Winning entry to the VMware {code} Connect Hackathon 2020!
+Here's the winning project of VMware {code} Connect Hackathon 2020, the result of hard work, teamwork and a lot of commitment! 
 
 ## Team members
 
