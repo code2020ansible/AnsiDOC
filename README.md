@@ -1,9 +1,7 @@
 # AnsiDOC
 Redfish + Ansible + vSphere 7 new REST API provisioning + vRA integrations
-VMWare CodeConnect's 2020 Worldwided Hackathon (VMWorld 2020)
 
-We won the 1st place in this Hackathon edition;
-Just Hard work, teamwork, and a lot of commitment!!!!!
+## Winning entry to the VMware {code} Connect Hackathon 2020!
 
 ## Team members
 
